@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import productImage from "../../assets/product.svg";
 
 interface IProduct {
@@ -30,7 +32,12 @@ const ProductCard = ({ name, originalPrice, discount = 0 }: IProduct) => {
   return (
     <div>
       <div className="image">
-        <img className="max-w-52 rounded-xl" src={productImage} alt="" />
+        <Link to={"/products/1"}>
+          <img className="max-w-52 rounded-xl" src={productImage} alt="" />
+        </Link>
+        {/* <a href="/products/1">
+          <img className="max-w-52 rounded-xl" src={productImage} alt="" />
+        </a> */}
       </div>
       <div className="info">
         <p className="font-bold text-xl">{name}</p>
